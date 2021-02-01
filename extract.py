@@ -1,11 +1,22 @@
+'''
+Our student managment system genearates a contact report in a messy csv. 
+This will strip the information that we need from the sheet and save it as
+a clean CSV. This needs to be replicable if we need to regenerate the report
+from year to year. 
+
+This script probably won't be particularly usable to others since it is highly
+customized for cleaning up our specific report. 
+
+When done we should get a CSV with rows formated like this:
+'Last, First','Student ID','Homeroom','Contact 1','Phone #1',ect
+'''
+
 import csv
 import os
 
 curDir = os.getcwd()
-file = curDir+'\contacts\contacts.csv'
-f = open('New.csv', "w")
-
-
+oldFile = curDir+'\contacts\contacts.csv'
+newFile = open('New.csv', "w")
 
 def dataClean(filePath):
     data = [] #Buffer list 
@@ -27,11 +38,11 @@ def dataClean(filePath):
                                 print(data[2])
                                 for item in data:
                                     # print(item)
-                                    f.write(item) 
-                                    f.write(', ')
-                                f.write('\n')
+                                    newFile.write(item) 
+                                    newFile.write(', ')
+                                newFile.write('\n')
                     data = []
-    f.close()     
+    newFile.close()     
 
 dataClean(file)
 
