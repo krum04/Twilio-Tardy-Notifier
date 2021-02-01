@@ -1,10 +1,10 @@
 '''
-Our student managment system genearates a contact report in a messy csv. 
+Our student managment system genearates a contact report in a messy CSV. 
 This will strip the information that we need from the sheet and save it as
-a clean CSV. This needs to be replicable if we need to regenerate the report
+a clean CSV. This needs to be replicable if we to regenerate the report
 from year to year. 
 
-This script probably won't be particularly usable to others since it is highly
+This script probably won't be particularly useful to others since it is highly
 customized for cleaning up our specific report. 
 
 When done we should get a CSV with rows formated like this:
